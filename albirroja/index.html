@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Metadatos esenciales SEO (Indicador 18) -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="La Albirroja — Historia y Glorias de la Selección de Fútbol de Paraguay. Conocé los momentos icónicos, leyendas y la línea de tiempo histórica." />
+  <title>La Albirroja | Historia y Glorias de Paraguay</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <!-- Hoja de estilos externa (Indicador 6) -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ========== HEADER / NAV (Indicador 1 - semántica) ========== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <img src="assets/images/Escudo_APF_actual.png" alt="Escudo oficial de la Selección Paraguaya de Fútbol" class="escudo-svg" />
+        <span class="logo-text">La Albirroja</span>
+      </div>
+
+      <!-- Navegación principal (Indicador 3 - enlaces) -->
+      <nav class="main-nav" aria-label="Menú principal">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#historia">Historia</a></li>
+          <li><a href="#leyendas">Leyendas</a></li>
+          <li><a href="#timeline">Línea de Tiempo</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botón hamburguesa para mobile -->
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- ========== MAIN (Indicador 1) ========== -->
+  <main>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero" aria-label="Sección de bienvenida">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Selección de Fútbol</p>
+        <h1>La Albirroja</h1>
+        <p class="hero-sub">Historia, pasión y glorias de Paraguay en el mundo</p>
+        <a href="#historia" class="btn-primary">Descubrí la historia</a>
+      </div>
+    </section>
+
+    <!-- HISTORIA SECTION -->
+    <section id="historia" class="seccion-historia" aria-labelledby="titulo-historia">
+      <div class="container">
+        <h2 id="titulo-historia">Una historia de orgullo</h2>
+        <p class="seccion-intro">
+          La Selección Paraguaya de Fútbol es uno de los equipos más apasionantes de América del Sur.
+          Con una historia marcada por actuaciones épicas, penales legendarios y jugadores que escribieron páginas doradas en el fútbol mundial.
+        </p>
+
+        <!-- Tarjetas de datos (Indicador 10 - Grid) -->
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-num">8</span>
+            <span class="stat-label">Copas América disputadas</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-num">2</span>
+            <span class="stat-label">Títulos Copa América (1953, 1979)</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-num">2010</span>
+            <span class="stat-label">Año del cuartos de final mundialista</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-num">+100</span>
+            <span class="stat-label">Años de historia futbolística</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEYENDAS SECTION -->
+    <section id="leyendas" class="seccion-leyendas" aria-labelledby="titulo-leyendas">
+      <div class="container">
+        <h2 id="titulo-leyendas">Leyendas de la Albirroja</h2>
+        <p class="seccion-intro">Los jugadores que marcaron una época y dejaron huella en el fútbol mundial.</p>
+
+        <!-- Tarjetas de jugadores (Indicador 10 - Flexbox) -->
+        <div class="leyendas-flex">
+        <!-- JOSÉ LUIS CHILAVERT -->
+          <article class="jugador-card">
+            <!-- Indicador 4 y 5 - multimedia y alt corregidos -->
+            <div class="jugador-img">
+              <img src="assets/images/chilavert.jpg" alt="José Luis Chilavert, arquero histórico de Paraguay" />
+            </div>
+            <div class="jugador-info">
+              <h3>José Luis Chilavert</h3>
+              <p class="jugador-pos">Arquero / 1989–2003</p>
+              <p>Portero goleador, ídolo máximo y capitán histórico. Marcó más de 60 goles en su carrera y fue elegido el mejor arquero del mundo tres veces.</p>
+            </div>
+          </article>
+
+          <!-- ROQUE SANTA CRUZ -->
+          <article class="jugador-card">
+            <div class="jugador-img">
+              <img src="assets/images/santacruz.jpg" alt="Roque Santa Cruz celebrando un gol con la selección paraguaya" />
+            </div>
+            <div class="jugador-info">
+              <h3>Roque Santa Cruz</h3>
+              <p class="jugador-pos">Delantero / 1999–2026</p>
+              <p>El goleador histórico de la Albirroja. Marcó en el Mundial 2010 y fue pieza clave en el histórico paso a cuartos de final.</p>
+            </div>
+          </article>
+
+          <!-- ROBERTO ACUÑA -->
+          <article class="jugador-card">
+            <div class="jugador-img">
+              <img src="assets/images/Toro_acuna.jpg" alt="Roberto 'El Toro' Acuña disputando el balón en el mediocampo" />
+            </div>
+            <div class="jugador-info">
+              <h3>Roberto Acuña</h3>
+              <p class="jugador-pos">Mediocampista / 1995–2010</p>
+              <p>Motor del mediocampo paraguayo durante más de una década. Participó en tres mundiales con la selección.</p>
+            </div>
+          </article>
+
+          <!-- SALVADOR CABAÑAS -->
+          <article class="jugador-card">
+            <div class="jugador-img">
+              <img src="assets/images/Salvador Cabañas.jpg" alt="Salvador Cabañas con la camiseta de la Albirroja" />
+            </div>
+            <div class="jugador-info">
+              <h3>Salvador Cabañas</h3>
+              <p class="jugador-pos">Delantero / 2002–2010</p>
+              <p>Veloz y desequilibrante, fue una de las grandes promesas truncadas del fútbol paraguayo y del continente.</p>
+            </div>
+          </article>
+
+  <article class="jugador-card">
+    <div class="jugador-img" role="img" aria-label="Ilustración de Francisco Arce">
+       <img src="assets/images/Francisco Arce.jpg" alt="Salvador Cabañas con la camiseta de la Albirroja" />
+    </div>
+    <div class="jugador-info">
+      <h3>Francisco Arce</h3>
+      <p class="jugador-pos">Lateral / 1990–2006</p>
+      <p>Lateral izquierdo de clase internacional, participó en cuatro Copas del Mundo con Paraguay. Reconocido por su técnica y visión de juego.</p>
+    </div>
+  </article>
+
+  <article class="jugador-card">
+    <div class="jugador-img" role="img" aria-label="Ilustración de Julio César Romero">
+     <img src="assets/images/Romerito.jpg" alt="Salvador Cabañas con la camiseta de la Albirroja" />
+    </div>
+    <div class="jugador-info">
+      <h3>Julio César Romero</h3>
+      <p class="jugador-pos">Mediocampista / 1979–1989</p>
+      <p>Apodado "Romerito", fue el primer gran ídolo global del fútbol paraguayo. Brilló en Fluminense y fue considerado uno de los mejores de su generación en Sudamérica.</p>
+    </div>
+  </article>
+
+  <article class="jugador-card">
+    <div class="jugador-img" role="img" aria-label="Ilustración de Óscar Cardozo">
+       <img src="assets/images/Tacuara.jpg" alt="Salvador Cabañas con la camiseta de la Albirroja" />
+    </div>
+    <div class="jugador-info">
+      <h3>Óscar Cardozo</h3>
+      <p class="jugador-pos">Delantero / 2005–2026</p>
+     <p>Leyenda viva y el máximo goleador paraguayo de la historia en el fútbol profesional. Ídolo absoluto del Benfica europeo y dueño de un zurdazo temible, mantiene una vigencia goleadora envidiable en el fútbol local.</p>
+    </div>
+  </article>
+
+  <article class="jugador-card">
+    <div class="jugador-img" role="img" aria-label="Ilustración de Arsenio Erico">
+      <img src="assets/images/arsenio-erico.jpg" alt="Salvador Cabañas con la camiseta de la Albirroja" />
+    </div>
+    <div class="jugador-info">
+      <h3>Arsenio Erico</h3>
+      <p class="jugador-pos">Delantero / 1930–1940</p>
+      <p>El mayor goleador de la historia del fútbol argentino con 295 goles en Independiente. Considerado el mejor jugador paraguayo de todos los tiempos por muchos historiadores.</p>
+    </div>
+  </article>
+
+  <article class="jugador-card">
+    <div class="jugador-img" role="img" aria-label="Ilustración de Paulo Da Silva">
+       <img src="assets/images/paulo-da-silva.jpeg" alt="Salvador Cabañas con la camiseta de la Albirroja" />
+    </div>
+    <div class="jugador-info">
+      <h3>Paulo Da Silva</h3>
+      <p class="jugador-pos">Defensor / 2000–2015</p>
+      <p>Capitán y pilar defensivo de la generación del Mundial 2010. Líder dentro y fuera del campo, fue sinónimo de solidez y compromiso con la Albirroja.</p>
+    </div>
+  </article>
+
+  <article class="jugador-card">
+    <div class="jugador-img" role="img" aria-label="Ilustración de José Saturnino Cardozo">
+      <img src="assets/images/saturnino.jpg" alt="Salvador Cabañas con la camiseta de la Albirroja" />
+    </div>
+    <div class="jugador-info">
+      <h3>José Saturnino Cardozo</h3>
+      <p class="jugador-pos">Delantero / 1992–2006</p>
+      <p>En la temporada 2002-03 marcó un total de 58 goles en toda la liga, sumando Apertura y Clausura junto a fases finales del torneo mexicano. Fue un referente ofensivo durante más de una década.</p>
+    </div>
+  </article>
+
+  <article class="jugador-card">
+    <div class="jugador-img" role="img" aria-label="Ilustración de Carlos Gamarra">
+      <img src="assets/images/Carlos_Gamarra.jpg" alt="Salvador Cabañas con la camiseta de la Albirroja" />
+    </div>
+    <div class="jugador-info">
+      <h3>Carlos Gamarra</h3>
+      <p class="jugador-pos">Defensor central / 1993–2010</p>
+      <p>Apodado "El Káiser", es considerado el mejor defensor central de la historia paraguaya. Elegante y contundente, jugó en el Inter de Milán y en grandes clubes de Brasil.</p>
+    </div>
+  </article>
+
+</div>
+      </div>
+    </section>
+
+    <!-- TIMELINE SECTION (Indicador - línea de tiempo interactiva) -->
+    <section id="timeline" class="seccion-timeline" aria-labelledby="titulo-timeline">
+      <div class="container">
+        <h2 id="titulo-timeline">Momentos Icónicos</h2>
+        <p class="seccion-intro">Los hitos que definen la historia de la Albirroja.</p>
+
+        <div class="timeline" role="list">
+
+          <div class="tl-item" role="listitem">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-content">
+              <span class="tl-year">1953</span>
+              <h3>Primera Copa América</h3>
+              <p>Paraguay conquista su primer título continental en Lima, Perú, con una generación brillante que marcó el inicio de la era dorada.</p>
+            </div>
+          </div>
+
+          <div class="tl-item" role="listitem">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-content">
+              <span class="tl-year">1979</span>
+              <h3>Segunda Copa América</h3>
+              <p>Con sede en Paraguay, la Albirroja gana su segundo título continental ante su gente. Una noche que el país jamás olvidará.</p>
+            </div>
+          </div>
+
+          <div class="tl-item" role="listitem">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-content">
+              <span class="tl-year">1998</span>
+              <h3>Mundial Francia — Octavos de Final</h3>
+              <p>Chilavert lidera a Paraguay hasta octavos de final. La caída ante Francia con gol de oro fue dolorosa pero digna.</p>
+            </div>
+          </div>
+
+          <div class="tl-item" role="listitem">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-content">
+              <span class="tl-year">2010</span>
+              <h3>¡Cuartos de Final en Sudáfrica! 🏆</h3>
+              <p>El logro más grande de la historia paraguaya. Tras eliminar a Japón y alcanzar cuartos, Paraguay cayó ante España — el eventual campeón — en un partido vibrante. Óscar Cardozo, arquero Villar y todo un equipo de héroes.</p>
+            </div>
+          </div>
+
+          <div class="tl-item" role="listitem">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-content">
+              <span class="tl-year">2011</span>
+              <h3>Final de la Copa América</h3>
+              <p>Paraguay llega a la final de la Copa América Argentina 2011. Aunque pierde ante Uruguay en penales, consolida su lugar entre los grandes del continente.</p>
+            </div>
+          </div>
+          
+
+<div class="tl-item" role="listitem">
+  <div class="tl-dot" aria-hidden="true"></div>
+  <div class="tl-content">
+    <span class="tl-year">2014</span>
+    <h3>Ausencia en Brasil — El inicio del desierto</h3>
+    <p>Paraguay no clasifica al Mundial de Brasil 2014, comenzando una sequía mundialista que se extendería por 16 años y marcaría una época oscura para la Albirroja.</p>
+  </div>
+</div>
+
+<div class="tl-item" role="listitem">
+  <div class="tl-dot" aria-hidden="true"></div>
+  <div class="tl-content">
+    <span class="tl-year">2025</span>
+    <h3>¡De vuelta al Mundial! 🌎</h3>
+    <p>El 5 de septiembre de 2025, con un empate ante Ecuador en Asunción, Paraguay selló oficialmente su clasificación al Mundial 2026. Las lágrimas de Alfaro en el área técnica lo dijeron todo. Después de 16 años, tres mundiales perdidos y noches de angustia, la Albirroja regresa a la Copa del Mundo que se disputará en Estados Unidos, México y Canadá.</p>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER (Indicador 1 - semántica) ========== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-logo">La Albirroja</p>
+      <p class="footer-copy">
+        Sitio web estático desarrollado con fines educativos. &copy; 2026<br>
+        <small>Trabajo Práctico — Desarrollo Web Estático</small>
+      </p>
+      <nav class="footer-nav" aria-label="Navegación de pie de página">
+        <a href="#inicio">Inicio</a>
+        <a href="#historia">Historia</a>
+        <a href="#leyendas">Leyendas</a>
+        <a href="#timeline">Línea de Tiempo</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Script externo (Indicador - JS modular) -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

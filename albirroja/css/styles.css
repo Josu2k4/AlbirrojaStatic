@@ -1,0 +1,556 @@
+/* ============================================
+   La Albirroja — Estilos Principales
+   styles.css
+   Indicador 20: Variables CSS en :root
+   Indicador 6: Hoja de estilos externa
+   ============================================ */
+
+/* === Variables globales (Indicador 20) === */
+:root {
+  --color-rojo:        #CC0000;
+  --color-rojo-oscuro: #990000;
+  --color-blanco:      #FFFFFF;
+  --color-negro:       #0D0D0D;
+  --color-gris-dark:   #1a1a1a;
+  --color-gris-mid:    #2e2e2e;
+  --color-gris-light:  #f4f4f4;
+  --color-acento:      #FFD700; /* dorado para detalles */
+
+  --fuente-titulo: 'Bebas Neue', sans-serif;
+  --fuente-cuerpo: 'Lato', sans-serif;
+
+  --radius: 6px;
+  --transicion: 0.3s ease;
+  --sombra: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* === Reset básico === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Estilos base (Indicador 8 - tipografía y jerarquía) === */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--fuente-cuerpo);
+  background-color: var(--color-negro);
+  color: var(--color-blanco);
+  line-height: 1.6;
+}
+
+/* Jerarquía tipográfica (Indicador 8) */
+h1 { font-family: var(--fuente-titulo); font-size: clamp(3rem, 8vw, 7rem); line-height: 1; letter-spacing: 2px; }
+h2 { font-family: var(--fuente-titulo); font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: 1px; }
+h3 { font-family: var(--fuente-titulo); font-size: 1.4rem; letter-spacing: 0.5px; }
+p  { font-size: 0.97rem; color: #ccc; }
+
+/* Contenedor centrado (Indicador 10 - layout) */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================
+   HEADER Y NAVEGACIÓN (Indicador 13 - consistencia)
+   ============================================ */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: rgba(13, 13, 13, 0.95);
+  border-bottom: 2px solid var(--color-rojo);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 64px;
+  /* Indicador 10: Flexbox */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.escudo-svg {
+  width: 36px;
+  height: 42px;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-family: var(--fuente-titulo);
+  font-size: 1.5rem;
+  color: var(--color-blanco);
+  letter-spacing: 1px;
+}
+
+/* Navegación (Indicador 3 - enlaces internos) */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /* Indicador 19: transición hover */
+  transition: color var(--transicion);
+  position: relative;
+  padding-bottom: 4px;
+}
+
+/* Subrayado animado en hover (Indicador 19) */
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--color-rojo);
+  transition: width var(--transicion);
+}
+
+.main-nav a:hover { color: var(--color-blanco); }
+.main-nav a:hover::after { width: 100%; }
+
+/* Botón hamburguesa (mobile) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-blanco);
+  font-size: 1.6rem;
+  cursor: pointer;
+  /* Indicador 19: hover state */
+  transition: color var(--transicion);
+}
+.nav-toggle:hover { color: var(--color-rojo); }
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Fondo degradado con patrón (Indicador 7 - paleta) */
+  background:
+    linear-gradient(160deg, rgba(204,0,0,0.15) 0%, transparent 50%),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.02) 40px,
+      rgba(255,255,255,0.02) 80px
+    ),
+    var(--color-negro);
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* Línea decorativa roja (efecto visual) */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--color-rojo), var(--color-acento), var(--color-rojo));
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero-eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--color-acento);
+  margin-bottom: 0.8rem;
+}
+
+.hero h1 {
+  color: var(--color-blanco);
+  text-shadow: 0 0 40px rgba(204,0,0,0.5);
+  margin-bottom: 1rem;
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: #bbb;
+  margin-bottom: 2rem;
+}
+
+/* Botón CTA (Indicador 12 - UI clara, Indicador 19 - hover) */
+.btn-primary {
+  display: inline-block;
+  padding: 0.85rem 2.2rem;
+  background-color: var(--color-rojo);
+  color: var(--color-blanco);
+  text-decoration: none;
+  font-family: var(--fuente-titulo);
+  font-size: 1.1rem;
+  letter-spacing: 1.5px;
+  border-radius: var(--radius);
+  border: 2px solid var(--color-rojo);
+  transition: background-color var(--transicion), color var(--transicion), transform var(--transicion);
+  box-shadow: 0 4px 15px rgba(204,0,0,0.4);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--color-rojo);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   SECCIÓN HISTORIA — STATS GRID
+   Indicador 10: CSS Grid
+   ============================================ */
+.seccion-historia {
+  padding: 6rem 0;
+  background-color: var(--color-gris-dark);
+}
+
+.seccion-historia h2 {
+  color: var(--color-blanco);
+  margin-bottom: 1rem;
+}
+
+.seccion-intro {
+  max-width: 650px;
+  margin-bottom: 3rem;
+  color: #aaa;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Grid de estadísticas (Indicador 10 - CSS Grid) */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background-color: var(--color-gris-mid);
+  border: 1px solid rgba(204,0,0,0.3);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  /* Indicador 19: hover */
+  transition: border-color var(--transicion), transform var(--transicion), box-shadow var(--transicion);
+}
+
+.stat-card:hover {
+  border-color: var(--color-rojo);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(204,0,0,0.2);
+}
+
+.stat-num {
+  display: block;
+  font-family: var(--fuente-titulo);
+  font-size: 3rem;
+  color: var(--color-rojo);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #999;
+}
+
+/* ============================================
+   SECCIÓN LEYENDAS — FLEXBOX
+   Indicador 10: Flexbox
+   ============================================ */
+.seccion-leyendas {
+  padding: 6rem 0;
+  background-color: var(--color-negro);
+}
+
+.seccion-leyendas h2 {
+  color: var(--color-blanco);
+  margin-bottom: 1rem;
+}
+
+/* Flex wrap de tarjetas (Indicador 10 - Flexbox) */
+.leyendas-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.jugador-card {
+  flex: 1 1 220px;
+  background-color: var(--color-gris-mid);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.05);
+  /* Indicador 19: hover con transición */
+  transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+.jugador-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(204,0,0,0.25);
+}
+
+/* Imagen placeholder (Indicador 4 - multimedia) */
+.jugador-img {
+  height: 160px; /* Podés subirlo a 200px o 220px si querés que la foto se vea más alta */
+  background: linear-gradient(135deg, var(--color-rojo-oscuro), var(--color-rojo));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Evita que cualquier cosa se salga del contenedor */
+}
+.jugador-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* Se adapta al contenedor sin deformarse */
+  object-position: center top; /* Centra horizontalmente y prioriza enfocar la cara/arriba */
+}
+
+.jugador-numero {
+  font-family: var(--fuente-titulo);
+  font-size: 5rem;
+  color: rgba(255,255,255,0.2);
+  line-height: 1;
+}
+
+.jugador-info {
+  padding: 1.2rem;
+}
+
+.jugador-info h3 {
+  color: var(--color-blanco);
+  margin-bottom: 0.25rem;
+}
+
+.jugador-pos {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-acento) !important;
+  margin-bottom: 0.6rem;
+}
+
+.jugador-info p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ============================================
+   SECCIÓN TIMELINE
+   ============================================ */
+.seccion-timeline {
+  padding: 6rem 0;
+  background-color: var(--color-gris-dark);
+}
+
+.seccion-timeline h2 {
+  color: var(--color-blanco);
+  margin-bottom: 1rem;
+}
+
+/* Timeline vertical */
+.timeline {
+  position: relative;
+  margin-top: 3rem;
+  padding-left: 2rem;
+}
+
+/* Línea vertical central */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-rojo), transparent);
+}
+
+.tl-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 2rem;
+  /* Indicador 19: hover en items */
+  transition: transform var(--transicion);
+}
+
+.tl-item:hover { transform: translateX(6px); }
+
+/* Punto de la línea */
+.tl-dot {
+  position: absolute;
+  left: -2.45rem;
+  top: 0.4rem;
+  width: 14px; height: 14px;
+  background-color: var(--color-rojo);
+  border-radius: 50%;
+  border: 2px solid var(--color-negro);
+  box-shadow: 0 0 0 3px rgba(204,0,0,0.3);
+  transition: box-shadow var(--transicion);
+}
+
+.tl-item:hover .tl-dot {
+  box-shadow: 0 0 0 6px rgba(204,0,0,0.2);
+}
+
+.tl-content {
+  background-color: var(--color-gris-mid);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.5rem;
+  border-left: 3px solid var(--color-rojo);
+}
+
+.tl-year {
+  display: inline-block;
+  font-family: var(--fuente-titulo);
+  font-size: 1.5rem;
+  color: var(--color-rojo);
+  margin-bottom: 0.2rem;
+}
+
+.tl-content h3 {
+  color: var(--color-blanco);
+  margin-bottom: 0.4rem;
+}
+
+.tl-content p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  background-color: #080808;
+  border-top: 2px solid var(--color-rojo);
+  padding: 2.5rem 0;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-logo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.8rem;
+  color: var(--color-blanco) !important;
+  letter-spacing: 1px;
+}
+
+.footer-copy {
+  font-size: 0.82rem;
+  color: #666 !important;
+  text-align: center;
+}
+
+.footer-copy small { color: #444; }
+
+.footer-nav {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /* Indicador 19: hover */
+  transition: color var(--transicion);
+}
+
+.footer-nav a:hover { color: var(--color-rojo); }
+
+/* ============================================
+   RESPONSIVE — MEDIA QUERIES
+   Indicador 9: Diseño adaptable
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .main-nav { display: none; }
+  .main-nav.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px; left: 0;
+    width: 100%;
+    background: rgba(13,13,13,0.98);
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--color-rojo);
+    z-index: 99;
+  }
+  .main-nav.open ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .main-nav.open a { padding: 0.6rem; font-size: 1rem; }
+  .nav-toggle { display: block; }
+
+  .leyendas-flex { flex-direction: column; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .footer-nav { justify-content: center; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .hero-content { padding: 1rem; }
+  .timeline { padding-left: 1rem; }
+  .tl-item { padding-left: 1.5rem; }
+  .tl-dot { left: -1.95rem; }
+  .jugador-img {height: 200px;}
+  .jugador-card {
+  flex: 1 1 100%;
+}
+}
