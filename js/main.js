@@ -47,7 +47,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Aplicar a tarjetas y elementos de timeline
-document.querySelectorAll('.stat-card, .jugador-card, .tl-item').forEach((el, i) => {
+document.querySelectorAll('.stat-card, .jugador-card').forEach((el, i) => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(24px)';
   el.style.transition = `opacity 0.5s ease ${i * 0.08}s, transform 0.5s ease ${i * 0.08}s`;
