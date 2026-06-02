@@ -50,7 +50,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.stat-card, .jugador-card').forEach((el, i) => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(24px)';
-  el.style.transition = `opacity 0.5s ease ${i * 0.08}s, transform 0.5s ease ${i * 0.08}s`;
+  el.style.transition = `opacity 0.4s ease, transform 0.4s ease`;
   observer.observe(el);
 });
 // Clase CSS para hacer visibles los elementos
