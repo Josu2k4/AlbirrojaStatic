@@ -31,7 +31,7 @@
   padding: 0;
 }
 
-/* === Estilos base (Indicador 8 - tipografía y jerarquía) === */
+/* === Estilos base === */
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -50,16 +50,16 @@ h2 { font-family: var(--fuente-titulo); font-size: clamp(2rem, 5vw, 3.5rem); let
 h3 { font-family: var(--fuente-titulo); font-size: 1.4rem; letter-spacing: 0.5px; }
 p  { font-size: 0.97rem; color: #ccc; }
 
-/* Contenedor centrado (Indicador 10 - layout) */
+/* Contenedor centrado */
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-/* ============================================
-   HEADER Y NAVEGACIÓN (Indicador 13 - consistencia)
-   ============================================ */
+/* ======================
+   HEADER Y NAVEGACIÓN
+   ====================== */
 .site-header {
   position: fixed;
   top: 0;
@@ -102,7 +102,7 @@ p  { font-size: 0.97rem; color: #ccc; }
   letter-spacing: 1px;
 }
 
-/* Navegación (Indicador 3 - enlaces internos) */
+/* Navegación */
 .main-nav ul {
   list-style: none;
   display: flex;
@@ -122,7 +122,7 @@ p  { font-size: 0.97rem; color: #ccc; }
   padding-bottom: 4px;
 }
 
-/* Subrayado animado en hover (Indicador 19) */
+/* Subrayado animado en hover */
 .main-nav a::after {
   content: '';
   position: absolute;
@@ -135,7 +135,7 @@ p  { font-size: 0.97rem; color: #ccc; }
 .main-nav a:hover { color: var(--color-blanco); }
 .main-nav a:hover::after { width: 100%; }
 
-/* Botón hamburguesa (mobile) */
+/* Botón hamburguesa */
 .nav-toggle {
   display: none;
   background: none;
@@ -148,9 +148,9 @@ p  { font-size: 0.97rem; color: #ccc; }
 }
 .nav-toggle:hover { color: var(--color-rojo); }
 
-/* ============================================
+/* ======================
    HERO SECTION
-   ============================================ */
+   ====================== */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -158,7 +158,7 @@ p  { font-size: 0.97rem; color: #ccc; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* Fondo degradado con patrón (Indicador 7 - paleta) */
+  /* Fondo degradado con patrón */
   background:
     linear-gradient(160deg, rgba(204,0,0,0.15) 0%, transparent 50%),
     repeating-linear-gradient(
@@ -173,7 +173,7 @@ p  { font-size: 0.97rem; color: #ccc; }
   overflow: hidden;
 }
 
-/* Línea decorativa roja (efecto visual) */
+/* Línea decorativa roja */
 .hero::before {
   content: '';
   position: absolute;
@@ -214,7 +214,7 @@ p  { font-size: 0.97rem; color: #ccc; }
   margin-bottom: 2rem;
 }
 
-/* Botón CTA (Indicador 12 - UI clara, Indicador 19 - hover) */
+/* Botón CTA */
 .btn-primary {
   display: inline-block;
   padding: 0.85rem 2.2rem;
@@ -238,7 +238,6 @@ p  { font-size: 0.97rem; color: #ccc; }
 
 /* ============================================
    SECCIÓN HISTORIA — STATS GRID
-   Indicador 10: CSS Grid
    ============================================ */
 .seccion-historia {
   padding: 6rem 0;
@@ -258,7 +257,7 @@ p  { font-size: 0.97rem; color: #ccc; }
   line-height: 1.8;
 }
 
-/* Grid de estadísticas (Indicador 10 - CSS Grid) */
+/* Grid de estadísticas */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -299,7 +298,6 @@ p  { font-size: 0.97rem; color: #ccc; }
 
 /* ============================================
    SECCIÓN LEYENDAS — FLEXBOX
-   Indicador 10: Flexbox
    ============================================ */
 .seccion-leyendas {
   padding: 6rem 0;
@@ -311,7 +309,7 @@ p  { font-size: 0.97rem; color: #ccc; }
   margin-bottom: 1rem;
 }
 
-/* Flex wrap de tarjetas (Indicador 10 - Flexbox) */
+/* Flex wrap de tarjetas */
 .leyendas-flex {
   display: flex;
   flex-wrap: wrap;
@@ -324,7 +322,7 @@ p  { font-size: 0.97rem; color: #ccc; }
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.05);
-  /* Indicador 19: hover con transición */
+  /* hover con transición */
   transition: transform var(--transicion), box-shadow var(--transicion);
 }
 
@@ -333,9 +331,9 @@ p  { font-size: 0.97rem; color: #ccc; }
   box-shadow: 0 12px 30px rgba(204,0,0,0.25);
 }
 
-/* Imagen placeholder (Indicador 4 - multimedia) */
+/* Imagen placeholder */
 .jugador-img {
-  height: 160px; /* Podés subirlo a 200px o 220px si querés que la foto se vea más alta */
+  height: 160px; /* Subir a 200px o 220px si quiero que la foto se vea más alta */
   background: linear-gradient(135deg, var(--color-rojo-oscuro), var(--color-rojo));
   display: flex;
   align-items: center;
@@ -412,7 +410,7 @@ p  { font-size: 0.97rem; color: #ccc; }
   position: relative;
   margin-bottom: 2.5rem;
   padding-left: 2rem;
-  /* Indicador 19: hover en items */
+  /* hover en items */
   transition: transform var(--transicion);
 }
 
@@ -512,7 +510,7 @@ p  { font-size: 0.97rem; color: #ccc; }
 
 /* ============================================
    RESPONSIVE — MEDIA QUERIES
-   Indicador 9: Diseño adaptable
+   Diseño adaptable
    ============================================ */
 
 /* Tablet */
